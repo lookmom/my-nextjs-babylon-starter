@@ -1,5 +1,6 @@
+import { GetStaticPropsContext } from 'next';
 import { AppProps } from 'next/app';
-import { NextIntlProvider } from 'next-intl';
+import { NextIntlProvider, useTranslations } from 'next-intl';
 import React from 'react';
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {

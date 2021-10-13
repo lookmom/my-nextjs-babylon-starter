@@ -3,25 +3,28 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "next": "next",
+    "dev": "cd app && next dev",
+    "build": "cd app && next build",
+    "start": "cd app && next start",
+    "lint": "cd app && next lint",
+    "next": "cd app && next",
     "install:husky": "husky install"
   },
+  "workspaces": [
+    "app",
+    "assets",
+    "components",
+    "locales"
+  ],
   "dependencies": {
-    "@babylonjs/core": "4.2.0",
-    "next": "^11.1.2",
-    "next-intl": "2.0.5",
-    "next-transpile-modules": "8.0.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "crossenv": "0.0.2-security",
+    "npm-run-all": "4.1.5",
+    "rimraf": "3.0.2"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "11.1.2",
-    "@types/react": "17.0.27",
     "@typescript-eslint/eslint-plugin": "4.31.0",
     "@typescript-eslint/parser": "4.31.0",
     "eslint": "7.32.0",

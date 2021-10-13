@@ -1,9 +1,14 @@
 import { FreeCamera, HemisphericLight, Mesh, MeshBuilder, Scene, Vector3 } from '@babylonjs/core';
 import React from 'react';
 
-import Babylon from '../components/Babylon';
+import Babylon from './Babylon';
 
-const HomePage: React.FC = () => {
+interface Props {
+  id?: string;
+  style?: React.CSSProperties;
+}
+
+const BabylonDemo: React.FC<Props> = ({ id, style }) => {
   const box = React.useRef<Mesh>();
 
   const onSceneReady = React.useCallback((scene: Scene) => {
@@ -47,16 +52,14 @@ const HomePage: React.FC = () => {
   }, []);
 
   return (
-    <section>
-      <Babylon
-        // antialias
-        onSceneReady={onSceneReady}
-        onRender={onRender}
-        id="my-canvas"
-        style={{ width: '100vw', height: '100vh' }}
-      />
-    </section>
+    <Babylon
+      // antialias
+      onSceneReady={onSceneReady}
+      onRender={onRender}
+      id={id}
+      style={style}
+    />
   );
 };
 
-export default HomePage;
+export default BabylonDemo;
