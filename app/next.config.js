@@ -1,6 +1,6 @@
 // @ts-check
 
-const withTM = require('next-transpile-modules')(['@babylonjs/core', '@src/components']); // pass the modules you would like to see transpiled
+const withTM = require('next-transpile-modules')(['@babylonjs/core', '@src/components', '@src/utils']); // pass the modules you would like to see transpiled
 
 /**
  * @type {import('next').NextConfig}

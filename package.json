@@ -16,7 +16,8 @@
     "app",
     "assets",
     "components",
-    "locales"
+    "locales",
+    "utils"
   ],
   "dependencies": {
     "crossenv": "0.0.2-security",

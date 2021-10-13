@@ -1,14 +1,20 @@
-import { GetStaticPropsContext } from 'next';
+// import App from 'next/app';
+import LoadingSpinner from '@src/components/LoadingSpinner';
+import { useCurrentLocale } from '@src/utils';
 import { AppProps } from 'next/app';
-import { NextIntlProvider, useTranslations } from 'next-intl';
+import { NextIntlProvider } from 'next-intl';
 import React from 'react';
 
-const App: React.FC<AppProps> = ({ Component, pageProps }) => {
+function CustomApp({ Component, pageProps }: AppProps) {
+  const { messages, error, isInitialized } = useCurrentLocale();
+  if (!isInitialized) return <LoadingSpinner />;
+  if (error) console.error(error.message);
+
   return (
-    <NextIntlProvider messages={pageProps.messages}>
+    <NextIntlProvider messages={messages}>
       <Component {...pageProps} />
     </NextIntlProvider>
   );
-};
+}
 
-export default App;
+export default CustomApp;
