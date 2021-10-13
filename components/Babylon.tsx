@@ -47,7 +47,7 @@ const Babylon: React.FC<Props> = ({
         window?.removeEventListener('resize', resize);
       };
     }
-  }, [reactCanvas]);
+  }, [antialias, engineOptions, adaptToDeviceRatio, onSceneReady, onRender, sceneOptions]);
 
   return <canvas ref={reactCanvas} {...rest} />;
 };
