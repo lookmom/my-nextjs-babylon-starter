@@ -1,9 +1,33 @@
 {
+  "parserOptions": {
+    "sourceType": "module"
+  },
   "root": true,
-  "plugins": ["simple-import-sort"],
+  // "plugins": ["simple-import-sort", "import"],
+  "plugins": ["import"],
   "extends": "next/core-web-vitals",
   "rules": {
-    "simple-import-sort/imports": "warn",
-    "simple-import-sort/exports": "error"
+    // "simple-import-sort/imports": "warn",
+    // "simple-import-sort/exports": "error",
+    "import/order": [
+      "warn",
+      {
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
+        "alphabetize": { "order": "asc" },
+        "newlines-between": "always",
+        "pathGroups": [
+          {
+            "pattern": "@src/**",
+            "group": "internal",
+            "position": "after"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["builtin"]
+      }
+    ],
+    "import/first": "error",
+    "import/newline-after-import": "warn",
+    "import/no-duplicates": "error",
+    "no-unused-vars": "warn"
   }
 }

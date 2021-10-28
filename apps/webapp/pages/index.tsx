@@ -1,7 +1,7 @@
-import BabylonDemo from '@src/components/BabylonDemo';
-import { GetStaticPropsContext } from 'next';
 import React from 'react';
 import { useTranslations } from 'use-intl';
+
+import BabylonDemo from '@src/components/BabylonDemo';
 
 const HomePage: React.FC = () => {
   const t = useTranslations();

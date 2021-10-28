@@ -1,9 +1,11 @@
-// import App from 'next/app';
+import { NextIntlProvider } from 'next-intl';
+import { AppProps } from 'next/app';
+import React from 'react';
+
 import LoadingSpinner from '@src/components/LoadingSpinner';
 import { useCurrentLocale } from '@src/utils';
-import { AppProps } from 'next/app';
-import { NextIntlProvider } from 'next-intl';
-import React from 'react';
+
+import '../index.scss';
 
 function CustomApp({ Component, pageProps }: AppProps) {
   const { messages, error, isInitialized } = useCurrentLocale();
