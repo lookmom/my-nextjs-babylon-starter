@@ -9,7 +9,8 @@ import { useCurrentLocale } from '@src/utils';
 import Layout from '../components/Layout';
 
 // import '../themes/index.scss';
-import '../themes/index-dark.scss';
+import '../themes/index-cyborg.scss';
+// import '../themes/index-darkly.scss';
 
 function CustomApp({ Component, pageProps }: AppProps) {
   const { messages, error, isInitialized } = useCurrentLocale();
