@@ -1,0 +1,8 @@
+.sidebar {
+  @extend .bg-light;
+  color: $body-color;
+  display: flex;
+  align-items: stretch;
+  height: 100vh;
+  max-height: 100vh;
+}
